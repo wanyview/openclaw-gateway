@@ -1,11 +1,7 @@
-FROM node:20-alpine
+FROM node:20-slim
 
 RUN npm install -g openclaw
 
-WORKDIR /app
-
-COPY openclaw.json /app/openclaw.json
-
 EXPOSE 18789
 
-CMD ["sh", "-c", "openclaw gateway"]
+CMD ["openclaw", "gateway"]
